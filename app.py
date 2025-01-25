@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 
 def retrieve_sol_price():
-    url = 'https://min-api.cryptocompare.com/data/price?fsym=SOL&tsyms=USDC'
+    url = f'https://min-api.cryptocompare.com/data/price?fsym=SOL&tsyms=USDC&api_key={st.secrets.CRYPTOCOMPARE_API_KEY}'
     response = requests.get(url)
     if not response.ok:
         st.exception(response)
